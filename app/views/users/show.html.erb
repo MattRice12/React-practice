@@ -4,14 +4,14 @@
   <% categories.each do |category| %>
     <div class="column content">
       <h2 class="category-name title is-2">
-        <%= category.name %>
+        <%= category.name.capitalize %>
       </h2>
 
       <ul>
         <% user.games.each do |game| %>
           <% if game.category_id == category.id %>
             <li class="game-name">
-              <%= game.name %>
+              <%= game.name.capitalize %>
             </li>
           <% end %>
         <% end %>

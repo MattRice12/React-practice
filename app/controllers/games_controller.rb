@@ -1,7 +1,8 @@
 class GamesController < ApplicationController
   def index
     games = Game.all
-    render locals: { games: games }
+    categories = Category.all
+    render locals: { games: games, categories: categories }
   end
 
   def show
