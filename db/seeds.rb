@@ -7,8 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-users = %w(MattR MattG Corey Tommy Eric)
+users = %w(MattG Corey Tommy Eric)
 categories = %w(videogames boardgames)
+
+User.create!(username: 'MattR', admin: true)
 
 users.each do |user|
   User.create!(username: user)

@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 
   def create
     user = User.new(user_params)
-    return redirect_to user if user.save
+    return redirect_to users_path if user.save
     flash[:alert] = user.errors
     render template: 'users/new.html.erb', locals: { user: user }
   end
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
 
   def destroy
     user = User.find_by(id: params[:id])
-    return redirect users_path if user.destroy
+    return redirect_to users_path if user.destroy
     flash[:alert] = "User does not exist!"
     redirect_to users_path
   end

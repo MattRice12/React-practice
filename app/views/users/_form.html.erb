@@ -1,0 +1,23 @@
+<%= form_for(user) do |f| %>
+  <div class="content">
+
+    <div class="errors">
+      <ul>
+        <% user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <%= f.label :username, class: "label" %>
+    <p class="control has-icon has-icon-right">
+      <%= f.text_field :username, class: 'input', placeholder: 'John Smith' %>
+      <i class="fa fa-check"></i>
+    </p>
+
+    <button class="button is-primary">
+      Submit
+    </button>
+
+  </div>
+<% end %>
