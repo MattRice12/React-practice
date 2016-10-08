@@ -29,7 +29,7 @@ class UsersController < ApplicationController
 
   def update
     user = User.find_by(id: params[:id])
-    return redirect_to user if user.update
+    return redirect_to user if user.update(user_params)
     flash[:alert] = user.errors
     render template: 'users/edit.html.erb', locals: { user: user }
   end
