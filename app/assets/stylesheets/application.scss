@@ -15,3 +15,22 @@
  */
 
  @import "bulma";
+
+nav {
+  margin-bottom: 30px;
+  padding: 5px 20px;
+  background: #1FC8DB;
+  .content {
+    a, a:not(.button):visited {
+      margin: 0 20px;
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      border-bottom-color: #1FC8DB;
+      &:hover {
+        color: #fff;
+        text-decoration: underline;
+      }
+    }
+  }
+}
