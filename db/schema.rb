@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20161008204126) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "categories", force: :cascade do |t|
     t.string   "name",       limit: 128, null: false
     t.datetime "created_at",             null: false
@@ -22,11 +25,10 @@ ActiveRecord::Schema.define(version: 20161008204126) do
     t.integer  "user_id"
     t.integer  "category_id"
     t.string   "name",        limit: 128, null: false
-    t.string   "category",    limit: 128, null: false
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
-    t.index ["category_id"], name: "index_games_on_category_id"
-    t.index ["user_id"], name: "index_games_on_user_id"
+    t.index ["category_id"], name: "index_games_on_category_id", using: :btree
+    t.index ["user_id"], name: "index_games_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -35,4 +37,6 @@ ActiveRecord::Schema.define(version: 20161008204126) do
     t.datetime "updated_at",             null: false
   end
 
+  add_foreign_key "games", "categories"
+  add_foreign_key "games", "users"
 end

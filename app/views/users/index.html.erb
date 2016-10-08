@@ -1,0 +1,9 @@
+<h1 class="header"> Users </h1>
+
+<ol class="all-users">
+  <% users.each do |user| %>
+    <h3>
+      <li> <%= link_to user.username, user_path(user) %></li>
+    </h3>
+  <% end %>
+</ol>

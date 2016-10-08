@@ -1,0 +1,17 @@
+<h1 class="user"> <%= user.username %> </h1>
+
+<% categories.each do |category| %>
+  <h2 class="category-name">
+    <%= category.name %>
+  </h2>
+
+  <ul>
+    <% user.games.each do |game| %>
+      <% if game.category_id == category.id %>
+        <li class="game-name">
+          <%= game.name %>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+<% end %>
