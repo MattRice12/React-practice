@@ -1,17 +1,23 @@
-<h1 class="user"> <%= user.username %> </h1>
+<h1 class="title is-1 user"> <%= user.username %> </h1>
 
-<% categories.each do |category| %>
-  <h2 class="category-name">
-    <%= category.name %>
-  </h2>
+<div class="columns">
+  <% categories.each do |category| %>
+    <div class="column content">
+      <h2 class="category-name title is-2">
+        <%= category.name %>
+      </h2>
 
-  <ul>
-    <% user.games.each do |game| %>
-      <% if game.category_id == category.id %>
-        <li class="game-name">
-          <%= game.name %>
-        </li>
-      <% end %>
-    <% end %>
-  </ul>
-<% end %>
+      <ul>
+        <% user.games.each do |game| %>
+          <% if game.category_id == category.id %>
+            <li class="game-name">
+              <%= game.name %>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+</div>
+
+<div> <%= link_to "New Game", new_game_path, class: 'button' %> </div>
