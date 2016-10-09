@@ -1,8 +1,8 @@
 var Games = React.createClass({
   render: function(){
-    let gameContent;
+    let gamesContent;
     if (this.props.cat.games.length) {
-      gameContent = this.props.cat.games.map(function(game) {
+      gamesContent = this.props.cat.games.map(function(game) {
         return (
           <div key={game.id} className="obj-with-del">
             <li>
@@ -15,6 +15,6 @@ var Games = React.createClass({
           </div>);
       });
     }
-    return(<ul>{gameContent}</ul>)
+    return(<ul>{gamesContent}</ul>)
   }
 })
