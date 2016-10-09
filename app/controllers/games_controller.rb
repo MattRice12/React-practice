@@ -6,7 +6,7 @@ class GamesController < ApplicationController
 
   def show
     game = Game.find_by(id: params[:id])
-    games = Game.where(name: game.name)
+    games = Game.where(name: game.name).includes(:user).as_json
     render locals: { game: game, games: games }
   end
 
