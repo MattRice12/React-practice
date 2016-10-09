@@ -1,0 +1,16 @@
+<h1 class="title is-1 categories"> Categories: </h1>
+
+<div class="content">
+
+  <ul class="content">
+    <% categories.each do |cat| %>
+
+      <li class="category-name title is-5">
+        <%= link_to cat.name.capitalize, category_path(cat) %>
+      </li>
+
+    <% end %>
+  </ul>
+
+</div>
+<div> <%= link_to "Add Category", new_category_path, class: 'button is-primary' %> </div>

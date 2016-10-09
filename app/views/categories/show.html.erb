@@ -1,0 +1,11 @@
+<h1 class="title is-1 category"> <%= category.name.capitalize %> </h1>
+
+<div class="content">
+  <h3 class="category-name title is-3">
+    <ul>
+      <% category.games.each do |game| %>
+        <li><%= link_to game.name, game_path(game) %></li>
+      <% end %>
+    </ul>
+  </h3>
+</div>

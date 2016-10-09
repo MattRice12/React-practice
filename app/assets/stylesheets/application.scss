@@ -16,8 +16,11 @@
 
  @import "bulma";
 
+.container {
+  margin: 30px 100px;
+}
+
 nav {
-  margin-bottom: 30px;
   padding: 5px 20px;
   background: #1FC8DB;
   .content {

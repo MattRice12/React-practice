@@ -1,0 +1,32 @@
+<%= form_for(game) do |f| %>
+  <div class="content">
+
+    <div class="errors">
+      <ul>
+        <% game.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <p>
+      <%= f.label :name, class: "label" %>
+      <%= f.text_field :name, class: 'input', placeholder: 'Talisman' %>
+    </p>
+
+    <p>
+      <%= f.label :category, class: 'label' %>
+      <%= f.select :category_id, options_from_collection_for_select(Category.all, :id, :name) %>
+    </p>
+
+    <p>
+      <%= f.label :friend, class: 'label' %>
+      <%= f.select :user_id, options_from_collection_for_select(User.all, :id, :username) %>
+    </p>
+
+    <button class="button is-primary">
+      Submit
+    </button>
+
+  </div>
+<% end %>
