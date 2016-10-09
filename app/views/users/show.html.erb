@@ -11,11 +11,12 @@
         <% user.games.each do |game| %>
           <% if game.category_id == category.id %>
             <li class="game-name">
-              <%= game.name %>
+              <%= link_to game.name, game %>
             </li>
           <% end %>
         <% end %>
       </ul>
+
     </div>
   <% end %>
 </div>
