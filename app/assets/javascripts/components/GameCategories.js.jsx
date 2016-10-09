@@ -1,6 +1,3 @@
-/* globals React */
-/* exported GameCategories */
-
 var GameCategories = React.createClass({
   render: function() {
     return(<div>

@@ -1,6 +1,3 @@
-/* globals React */
-/* exported Delete */
-
 var Delete = React.createClass({
   handleDelete: function (e) {
     console.log(this.props)

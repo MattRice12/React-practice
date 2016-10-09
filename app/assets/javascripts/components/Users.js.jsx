@@ -1,6 +1,3 @@
-/* globals React */
-/* exported Users */
-
 var Users = React.createClass({
   render: function() {
     return(

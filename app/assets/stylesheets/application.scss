@@ -14,7 +14,12 @@
  *= require_self
  */
 
- @import "bulma";
+@import 'bulma';
+@import 'variables';
+@import 'categories';
+@import 'games';
+@import 'users';
+
 
 .container {
   margin: 30px 100px;
