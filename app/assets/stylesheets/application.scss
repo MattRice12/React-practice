@@ -52,3 +52,11 @@ nav {
     }
   }
 }
+
+.user-with-del {
+  display: flex;
+  margin: 20px 5px;
+  .user-name {
+    margin: 0 10px;
+  }
+}

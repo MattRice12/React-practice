@@ -36,8 +36,11 @@ class UsersController < ApplicationController
 
   def destroy
     user = User.find_by(id: params[:id])
-    return redirect_to users_path if user.destroy
-    flash[:alert] = "User does not exist!"
+    if user.destroy && request.xhr?
+      flash[:alert] = "User has been deleted"
+    else
+      flash[:alert] = "User does not exist!"
+    end
     redirect_to users_path
   end
 
