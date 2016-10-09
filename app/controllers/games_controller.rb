@@ -18,7 +18,7 @@ class GamesController < ApplicationController
   def create
     game = Game.new(game_params)
     return redirect_to games_path if game.save
-    flash[:alert] = "Game could not be created."
+    flash[:alert] = game.errors
     render template: 'games/new.html.erb', locals: { game: game }
   end
 
@@ -30,7 +30,7 @@ class GamesController < ApplicationController
   def update
     game = Game.find_by(id: params[:id])
     return redirect_to games_path if game.update(game_params)
-    flash[:alert] = "Game could not be updated."
+    flash[:alert] = game.errors
     render template: 'games/edit.html.erb'
   end
 
