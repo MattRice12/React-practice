@@ -2,6 +2,13 @@
 
 <div class="content">
   <h3 class="category-name title is-3">
+    <strong>Owned by: </strong>
+      <ul>
+        <% games.each do |gameowner| %>
+          <li><%= link_to gameowner.user.username, gameowner.user %></li>
+        <% end %>
+      </ul>
+
     <strong>Description: </strong><%= game.description %>
   </h3>
 </div>

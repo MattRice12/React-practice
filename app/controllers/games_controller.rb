@@ -7,7 +7,8 @@ class GamesController < ApplicationController
 
   def show
     game = Game.find_by(id: params[:id])
-    render locals: { game: game }
+    games = Game.where(name: game.name)
+    render locals: { game: game, games: games }
   end
 
   def new
