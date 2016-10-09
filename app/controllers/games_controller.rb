@@ -1,8 +1,7 @@
 class GamesController < ApplicationController
   def index
-    games = Game.all
-    categories = Category.all
-    render locals: { games: games, categories: categories }
+    categories = Category.all.includes(:games).as_json
+    render locals: { categories: categories }
   end
 
   def show

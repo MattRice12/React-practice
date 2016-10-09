@@ -17,7 +17,8 @@ var Users = React.createClass({
                     </a>
                   </li>
                 </h4>
-                  <Delete user={user}/>
+                  <Delete obj={user}
+                          url={"users"}/>
               </div>
               )
             })
