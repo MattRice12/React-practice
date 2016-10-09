@@ -10,7 +10,7 @@ var Categories = React.createClass({
               <div key={cat.id} className="obj-with-del">
               <li className="category-name title is-5">
                 <h4 className="obj-name">
-                  <a href={"/categories" + cat.id}>{cat.name}</a>
+                  <a href={"/categories/" + cat.id}>{cat.name}</a>
                 </h4>
               </li>
               <Delete obj={cat}
