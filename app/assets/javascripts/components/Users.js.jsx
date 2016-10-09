@@ -7,18 +7,18 @@ var Users = React.createClass({
       <div className="content">
         <h1 className="title is-1 user"> Friends: </h1>
 
-        <ul className="all-users">
+        <ul>
           {this.props.users.map(function(user) {
             return (
-              <div key={user.id} className="user-with-del">
-                <h4 className="user-name">
-                  <li>
+              <div key={user.id} className="obj-with-del">
+                <li>
+                  <h4 className="obj-name">
                     <a href={"/users/" + user.id}>{user.username}
                     </a>
-                  </li>
-                </h4>
-                  <Delete obj={user}
-                          url={"users"}/>
+                  </h4>
+                </li>
+                <Delete obj={user}
+                        url={"users"}/>
               </div>
               )
             })
