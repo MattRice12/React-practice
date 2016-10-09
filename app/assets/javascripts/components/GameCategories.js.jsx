@@ -19,6 +19,7 @@ var GameCategories = React.createClass({
           )
         })}
       </div>
+      <a href="/games/new" className='button is-primary'>Add Game</a>
     </div>
     )
   }
