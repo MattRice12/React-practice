@@ -60,18 +60,19 @@ nav {
 
 
 .thumb {
+  max-width: 50px;
   max-height: 50px;
   position: relative;
   bottom: 15px;
 }
 
 .photo img {
-  max-height: 250px;
+  height: 250px;
 }
 
 .obj-with-del {
   display: flex;
-  margin: 20px 5px;
+  margin: 30px 5px;
   .obj-name {
     margin: 0 10px;
   }
