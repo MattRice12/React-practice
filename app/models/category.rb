@@ -3,7 +3,7 @@ class Category < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 128}
 
-  has_attached_file :gamepic, styles: { medium: "100x100>", thumb: "25x25>" }, default_url: "http://headphonespares.sennheiser.co.uk/gfx/default-missing-category-placeholder.png"
+  has_attached_file :gamepic, styles: { medium: "100x100>" }, default_url: "http://headphonespares.sennheiser.co.uk/gfx/default-missing-category-placeholder.png"
 
   validates_attachment_content_type :gamepic, content_type: /\Aimage\/.*\z/
 

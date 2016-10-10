@@ -58,12 +58,8 @@ nav {
   }
 }
 
-
-.thumb {
-  max-width: 50px;
-  max-height: 50px;
-  position: relative;
-  bottom: 15px;
+.thumb img {
+  max-height: 100%;
 }
 
 .photo img {
@@ -75,6 +71,10 @@ nav {
 .obj-with-del {
   display: flex;
   margin: 30px 5px;
+  height: 50px;
+  &:hover {
+    background: #F0F3FC;
+  }
   .obj-name {
     margin: 0 10px;
   }

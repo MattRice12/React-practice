@@ -5,7 +5,9 @@ var Category = React.createClass({
       categoryContent = this.props.category.games.map(function(game) {
         return (
           <div key={game.id} className="obj-with-del">
-            <img className="thumb" src={game.gamepic_url_thumb} alt=""/>
+            <div className="thumb">
+              <img src={game.gamepic_url_thumb} alt={game.name} title={game.name}/>
+            </div>
               <h4 className="obj-name">
                 <a href={"/games/" + game.id}>{game.name}</a>
               </h4>
