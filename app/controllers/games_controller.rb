@@ -23,12 +23,12 @@ class GamesController < ApplicationController
   end
 
   def edit
-    game = Game.find_by(id: params[:id])
+    game = Game.find_or_create_by(id: params[:id])
     render locals: { game: game }
   end
 
   def update
-    game = Game.find_by(id: params[:id])
+    game = Game.find_or_create_by(id: params[:id])
     return redirect_to games_path if game.update(game_params)
     flash[:alert] = game.errors
     render template: 'games/edit.html.erb'
