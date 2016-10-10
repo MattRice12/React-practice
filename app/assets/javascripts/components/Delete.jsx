@@ -4,9 +4,7 @@ var Delete = React.createClass({
     $.ajax({
       url: "/" + this.props.url + "/" + this.props.obj.id,
       method: "DELETE",
-      }).done(function (response) {
-        window.location.reload();
-    });
+      });
   },
 
   render: function() {
