@@ -58,7 +58,14 @@ nav {
   }
 }
 
-img {
+
+.thumb {
+  max-height: 50px;
+  position: relative;
+  bottom: 15px;
+}
+
+.photo img {
   max-height: 250px;
 }
 
