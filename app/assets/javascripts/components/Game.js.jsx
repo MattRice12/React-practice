@@ -23,6 +23,7 @@ var Game = React.createClass({
           <strong>Description: </strong>
             <ul className="title is-4">{this.props.game.description}</ul>
         </h3>
+        <a href={"/games/" + this.props.game.id + "/edit"} className='button is-primary'>Edit Game</a>
       </div>
     )
   }
