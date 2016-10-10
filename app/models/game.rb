@@ -8,7 +8,16 @@ class Game < ApplicationRecord
 
   validates_attachment_content_type :gamepic, content_type: /\Aimage\/.*\z/
 
-  def as_json(_= nil)
-    super(include: :user)
+  def gamepic_url_med
+    gamepic.url(:medium)
   end
+
+  def gamepic_url_thumb
+    gamepic.url(:thumb)
+  end
+
+  def as_json(_= nil)
+    super(include: :user, methods: [:gamepic_url_med, :gamepic_url_thumb])
+  end
+
 end

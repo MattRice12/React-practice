@@ -1,7 +1,1 @@
-<% if game.gamepic.present? %>
-  <h1 class="title is-1">
-      <%= image_tag game.gamepic.url(:medium) %>
-  </h1>
-<% end %>
-
 <%= react_component("Game", game: game, games: games) %>

@@ -15,6 +15,7 @@ var Game = React.createClass({
 
     return(
       <div className="content">
+        <div className="photo"><img src={this.props.game.gamepic_url_med} alt=""/></div>
         <h1 className="title is-1 game">{this.props.game.name}</h1>
 
         <h3 className="category-name title is-3">
