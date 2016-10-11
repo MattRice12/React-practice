@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    users = User.all
+    users = User.all.includes(:games).as_json
     render locals: { users: users }
   end
 
@@ -47,6 +47,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:username)
+    params.require(:user).permit(:username, :avatar)
   end
 end

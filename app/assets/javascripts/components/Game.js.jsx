@@ -1,7 +1,6 @@
 var Game = React.createClass({
   render: function() {
     let gameContent;
-    let imageContent;
     if (this.props.games.length) {
       gameContent = this.props.games.map(function(g) {
         return(<div key={g.id} className="obj-with-del">
