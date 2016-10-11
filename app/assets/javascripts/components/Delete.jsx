@@ -9,7 +9,7 @@ var Delete = React.createClass({
 
   render: function() {
     return (
-      <a onClick={this.handleDelete} className="button is-small is-danger is-outlined react-clear" id={"delete-" + this.props.obj} title="Delete User">Delete
+      <a onClick={this.handleDelete} className="button is-small is-danger is-outlined react-clear" title="Delete User">Delete
       </a>
     )
   }
