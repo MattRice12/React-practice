@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    users = User.all.includes(:games).as_json
+    users = User.all.order(:created_at).includes(:games).order('games.created_at').as_json
     render locals: { users: users }
   end
 
