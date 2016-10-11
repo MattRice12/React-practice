@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
   def index
-    categories = Category.all.includes(:games).as_json
+    categories = Category.all.includes(:games).order('games.created_at').as_json
     render locals: { categories: categories }
   end
 
