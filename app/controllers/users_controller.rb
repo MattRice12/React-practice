@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, only: [:index, :show, :destroy]
+
   def index
     users = User.all.order(:created_at).includes(:games).order('games.created_at').as_json
     render locals: { users: users }

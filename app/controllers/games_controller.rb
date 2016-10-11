@@ -1,4 +1,6 @@
 class GamesController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     categories = Category.all.includes(:games).order('games.created_at').as_json
     render locals: { categories: categories }

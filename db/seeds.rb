@@ -10,10 +10,10 @@
 users = %w(MattG Corey Tommy Eric)
 categories = %w(videogames boardgames)
 
-User.create!(username: 'MattR', admin: true)
+User.create!(username: 'MattR', email: 'matt@example.com', password: "password", admin: true)
 
 users.each do |user|
-  User.create!(username: user)
+  User.create!(username: user, email: "#{user}@example.com", password: "password", admin: false)
 end
 
 categories.each do |cat|

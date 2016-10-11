@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     categories = Category.all
     category = Category.find_by(id: params[:id])
