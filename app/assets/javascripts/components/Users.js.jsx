@@ -1,5 +1,6 @@
 var Users = React.createClass({
   render: function() {
+    let currentUser = this.props.current_user;
     return(
       <div className="content">
         <h1 className="title is-1 user"> Friends: </h1>
@@ -13,8 +14,9 @@ var Users = React.createClass({
                 <h4 className="obj-name">
                   <a href={"/users/" + user.id}>{user.username}</a>
                 </h4>
-                <Delete obj={user}
-                        url={"users"}/>
+                <Delete obj={user} url={"users"}/>
+
+                <AddFriend user={currentUser} friend={user}/>
               </div>
               )
             })
