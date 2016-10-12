@@ -1,4 +1,8 @@
 class FriendshipsController < ApplicationController
+  def index
+    render
+  end
+
   def create
     friendship = Friendship.new(friendship_params)
     if friendship.save

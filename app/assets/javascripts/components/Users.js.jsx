@@ -3,7 +3,7 @@ var Users = React.createClass({
     let currentUser = this.props.current_user;
     return(
       <div className="content">
-        <h1 className="title is-1 user"> Friends: </h1>
+        <h1 className="title is-1 user"> All Users: </h1>
         <div>
           {this.props.users.map(function(user) {
             return (
