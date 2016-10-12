@@ -1,6 +1,13 @@
 class FriendshipsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
-    render
+    if current_user == nil
+      redirect_to sign_in
+    else
+      friendships = current_user.friendships
+      render locals: { friendships: friendships }
+    end
   end
 
   def create
@@ -18,7 +25,7 @@ class FriendshipsController < ApplicationController
     friendship = current_user.friendships.find(params[:id])
     friendship.destroy
     flash[:notice] = "Removed friendship."
-    redirect_to current_user
+    redirect_to friendships_path
   end
 
   private
