@@ -31,7 +31,7 @@ class GamesController < ApplicationController
 
   def update
     game = Game.find_or_create_by(id: params[:id])
-    return redirect_to games_path if game.update(game_params)
+    return redirect_to game if game.update(game_params)
     flash[:alert] = game.errors
     render template: 'games/edit.html.erb'
   end

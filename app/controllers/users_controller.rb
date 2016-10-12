@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, only: [:index, :show, :destroy]
+  before_action :authenticate_user!
 
   def index
     users = User.all.order(:created_at).includes(:games).order('games.created_at').as_json
@@ -49,6 +49,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:username, :avatar)
+    params.require(:user).permit(:username, :email, :avatar)
   end
 end

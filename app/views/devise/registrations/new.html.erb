@@ -3,10 +3,17 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
+  <%= f.label :username, class: "label" %>
+  <p class="control">
+    <%= f.text_field :username, class: 'input', placeholder: 'John Smith' %>
+  </p>
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
+
+  <p><%= f.file_field :avatar %></p>
 
   <div class="field">
     <%= f.label :password %>
