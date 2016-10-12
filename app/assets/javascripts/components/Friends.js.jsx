@@ -18,6 +18,7 @@ var Friends = React.createClass({
               )
             })
           }
+          <a className="title is-4 button is-primary" href="/users">Find More Friends</a>
         </div>
       </div>
     )

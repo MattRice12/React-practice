@@ -2,8 +2,8 @@ const AddFriend = React.createClass({
   makeFriend: function(e) {
     e.preventDefault();
     console.log('body text', );
-    console.log('this.props.link.id', this.props.user.id);
-    console.log('this.props.user.id', this.props.friend.id);
+    console.log('this.props.user.id', this.props.user.id);
+    console.log('this.props.friend.id', this.props.friend.id);
 
     $.ajax({
       url: '../friendships/',
