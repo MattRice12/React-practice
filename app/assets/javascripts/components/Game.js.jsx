@@ -20,7 +20,10 @@ var Game = React.createClass({
 
         <h3 className="category-name title is-3">
           <strong>Owned by: </strong>
-            <ul>{gameContent}</ul>
+            <ul>
+              {gameContent}
+              <AddGame user={this.props.current_user} game={this.props.game}/>
+            </ul>
           <strong>Description: </strong>
             <ul className="title is-4">{this.props.game.description}</ul>
         </h3>
