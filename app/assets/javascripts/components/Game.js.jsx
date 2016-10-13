@@ -3,16 +3,14 @@ var Game = React.createClass({
     let gameContent;
     let currentUser = this.props.current_user
     let addGameButton;
+    let delGameButton;
     let checker = 1;
-    let deleteGame;
 
     if (this.props.game.game_collections.length) {
-      deleteGame = this.props.game.game_collections.map(function(gg) {
+      this.props.game.game_collections.map(function(gg) {
         if (gg.user_id === currentUser.id) {
-          return(<div key={gg.id}>
-            <Delete obj={gg} url={"game_collections"}/>
-            </div>)
-        }
+          delGameButton = <Delete obj={gg} url={"game_collections"}/>
+          }
       })
     };
 
@@ -26,7 +24,7 @@ var Game = React.createClass({
           <li>
             <h4 className="obj-name title is-4">
               <a href={"/users/" + user.id}>{user.username}</a>
-                {deleteGame}
+               {delGameButton}
             </h4>
           </li>
         </div>);
