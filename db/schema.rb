@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161012200750) do
+ActiveRecord::Schema.define(version: 20161013203831) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,8 +28,16 @@ ActiveRecord::Schema.define(version: 20161012200750) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "games", force: :cascade do |t|
+  create_table "game_collections", force: :cascade do |t|
     t.integer  "user_id"
+    t.integer  "game_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_game_collections_on_game_id", using: :btree
+    t.index ["user_id"], name: "index_game_collections_on_user_id", using: :btree
+  end
+
+  create_table "games", force: :cascade do |t|
     t.integer  "category_id"
     t.string   "name",                 limit: 128, null: false
     t.datetime "created_at",                       null: false
@@ -40,7 +48,6 @@ ActiveRecord::Schema.define(version: 20161012200750) do
     t.integer  "gamepic_file_size"
     t.datetime "gamepic_updated_at"
     t.index ["category_id"], name: "index_games_on_category_id", using: :btree
-    t.index ["user_id"], name: "index_games_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -66,6 +73,7 @@ ActiveRecord::Schema.define(version: 20161012200750) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "game_collections", "games"
+  add_foreign_key "game_collections", "users"
   add_foreign_key "games", "categories"
-  add_foreign_key "games", "users"
 end

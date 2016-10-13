@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def show
     user = User.find_by(id: params[:id])
     categories = Category.all.includes(:games).as_json
-    games = Game.where(user_id: params[:id])
+    games = current_user.games
     render locals: { user: user, categories: categories, games: games }
   end
 

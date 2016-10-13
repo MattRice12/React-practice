@@ -2,12 +2,12 @@ class FriendshipsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    if current_user == nil
-      redirect_to sign_in
-    else
+    # if current_user == nil
+    #   redirect_to sign_in
+    # else
       friendships = current_user.friendships
       render locals: { friendships: friendships }
-    end
+    # end
   end
 
   def create
