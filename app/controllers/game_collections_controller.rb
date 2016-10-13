@@ -13,10 +13,11 @@ class GameCollectionsController < ApplicationController
   end
 
   def destroy
-    game_collection = current_user.game_collection.find(params[:id])
+    game_collection = GameCollection.find(params[:id])
+    game = game_collection.game_id
     game_collection.destroy
     flash[:notice] = "Game removed."
-    redirect_to root_path
+    redirect_to game_path(game)
   end
 
   private
