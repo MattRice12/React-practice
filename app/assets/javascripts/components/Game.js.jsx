@@ -6,15 +6,6 @@ var Game = React.createClass({
     let delGameButton;
     let checker = 1;
 
-    if (this.props.game.game_collections.length) {
-      this.props.game.game_collections.map(function(gg) {
-        if (gg.user_id === currentUser.id) {
-          delGameButton = <Delete obj={gg} url={"game_collections"}/>
-          }
-      })
-    };
-
-
     if (this.props.game.users.length) {
       gameContent = this.props.game.users.map(function(user) {
         if (currentUser.id === user.id) {
@@ -24,7 +15,6 @@ var Game = React.createClass({
           <li>
             <h4 className="obj-name title is-4">
               <a href={"/users/" + user.id}>{user.username}</a>
-               {delGameButton}
             </h4>
           </li>
         </div>);
@@ -33,6 +23,14 @@ var Game = React.createClass({
 
     if (checker == 1) {
       addGameButton = <AddGame user={this.props.current_user} game={this.props.game}/>
+    };
+
+    if (this.props.game.game_collections.length) {
+      this.props.game.game_collections.map(function(gg) {
+        if (gg.user_id === currentUser.id) {
+          delGameButton = <Delete obj={gg} url={"game_collections"}/>
+          }
+      })
     };
 
     return(
@@ -44,6 +42,7 @@ var Game = React.createClass({
           <strong>Owned by: </strong>
             <ul>
               {gameContent}
+              {delGameButton}
               {addGameButton}
             </ul>
           <strong>Description: </strong>

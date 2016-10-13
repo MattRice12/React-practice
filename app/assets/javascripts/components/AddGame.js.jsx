@@ -1,8 +1,5 @@
 const AddGame = React.createClass({
   addToGamecollection: function(e) {
-    e.preventDefault();
-    console.log('this.props.user.id', this.props.user.id);
-    console.log('this.props.game.id', this.props.game.id);
 
     $.ajax({
       url: '../game_collections/',
