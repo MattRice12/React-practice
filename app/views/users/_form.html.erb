@@ -16,9 +16,9 @@
 
     <p><%= f.file_field :avatar %></p>
 
-    <button class="button is-primary">
-      Submit
-    </button>
+    <div>
+      <%= f.submit class: "button is-primary", value: "Submit" %>
+    </div>
 
   </div>
 <% end %>

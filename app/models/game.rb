@@ -1,10 +1,8 @@
 class Game < ApplicationRecord
-  belongs_to :user
   belongs_to :category
 
   has_many :game_collections, dependent: :destroy
   has_many :users, through: :game_collections
-
 
   validates :name, presence: true, length: { maximum: 128}
 

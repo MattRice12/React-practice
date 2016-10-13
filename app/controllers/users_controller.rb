@@ -26,12 +26,12 @@ class UsersController < ApplicationController
   end
 
   def edit
-    user = User.find_by(id: params[:id])
+    user = User.find_or_create_by(id: params[:id])
     render locals: { user: user }
   end
 
   def update
-    user = User.find_by(id: params[:id])
+    user = User.find_or_create_by(id: params[:id])
     return redirect_to user if user.update(user_params)
     flash[:alert] = user.errors
     render template: 'users/edit.html.erb', locals: { user: user }

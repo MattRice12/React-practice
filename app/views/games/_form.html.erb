@@ -23,18 +23,13 @@
     </p>
 
     <p>
-      <%= f.label :friend, class: 'label' %>
-      <%= f.select :user_id, options_from_collection_for_select(User.all, :id, :username, selected: game.user_id) %>
-    </p>
-
-    <p>
-      <%= f.label :name, class: "label" %>
+      <%= f.label :description, class: "label" %>
       <%= f.text_area :description, class: 'input', placeholder: 'This game was cool because ...' %>
     </p>
 
-    <button class="button is-primary">
-      Submit
-    </button>
+    <div>
+      <%= f.submit class: "button is-primary", value: "Submit" %>
+    </div>
 
   </div>
 <% end %>

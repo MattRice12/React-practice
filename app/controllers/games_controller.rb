@@ -8,8 +8,7 @@ class GamesController < ApplicationController
 
   def show
     game = Game.find_by(id: params[:id])
-    games = Game.where(name: game.name).includes(:user).as_json
-    render locals: { game: game, games: games }
+    render locals: { game: game }
   end
 
   def new
@@ -33,7 +32,7 @@ class GamesController < ApplicationController
     game = Game.find_or_create_by(id: params[:id])
     return redirect_to game if game.update(game_params)
     flash[:alert] = game.errors
-    render template: 'games/edit.html.erb'
+    render template: 'games/edit.html.erb', locals: { game: game }
   end
 
   def destroy
@@ -46,6 +45,6 @@ class GamesController < ApplicationController
   private
 
   def game_params
-    params.require(:game).permit(:name, :user_id, :category_id, :gamepic, :description)
+    params.require(:game).permit(:name, :category_id, :gamepic, :description)
   end
 end
