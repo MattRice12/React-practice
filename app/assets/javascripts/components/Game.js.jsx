@@ -1,17 +1,14 @@
 var Game = React.createClass({
   render: function() {
     let gameContent;
-    let currentUser = this.props.current_user;
-    if (this.props.games.length) {
-      gameContent = this.props.games.map(function(game) {
-        return(<div key={game.id} className="obj-with-del">
+    if (this.props.game.users.length) {
+      gameContent = this.props.game.users.map(function(user) {
+        return(<div key={user.id} className="obj-with-del">
           <li>
             <h4 className="obj-name title is-4">
-              <a href={"/users/" + game.user_id}>{game.user.username}</a>
+              <a href={"/users/" + user.id}>{user.username}</a>
             </h4>
           </li>
-          <AddGame user={currentUser} game={game}/>
-
         </div>);
       })
     };
