@@ -21,7 +21,7 @@ const AddGame = React.createClass({
   render: function() {
     return (
         <form className="new_game" onSubmit={this.addToGamecollection}>
-          <input type="submit" value="Add Game" className="button is-primary"/>
+          <input type="submit" value="Add Game to Collection" className="button is-primary"/>
         </form>
     )
   }

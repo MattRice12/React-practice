@@ -22,6 +22,7 @@ var Category = React.createClass({
         <div className="content">
             <ul>{categoryContent}</ul>
         </div>
+        <a href={"/games/new?category_id=" + this.props.category.id} className='button is-primary'>Add Game</a>
       </div>
     )
   }

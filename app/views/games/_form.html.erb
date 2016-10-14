@@ -19,7 +19,7 @@
 
     <p>
       <%= f.label :category, class: 'label' %>
-      <%= f.select :category_id, options_from_collection_for_select(Category.all, :id, :name, selected: game.category_id) %>
+        <%= f.select :category_id, options_from_collection_for_select(Category.all, :id, :name, selected: [params[:category_id], game.category_id]) %>
     </p>
 
     <p>
