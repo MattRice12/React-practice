@@ -8,11 +8,8 @@ class FriendshipsController < ApplicationController
 
   def create
     friendship = Friendship.new(friendship_params)
-    if friendship.save
-      flash[:notice] = "Added friend."
-    else
-      flash[:error] = "Unable to add friend."
-    end
+    friendship.save
+    flash[:notice] = "Added friend."
   end
 
   def destroy

@@ -14,7 +14,6 @@ var Users = React.createClass({
                 <h4 className="obj-name">
                   <a href={"/users/" + user.id}>{user.username}</a>
                 </h4>
-                <Delete obj={user} url={"users"}/>
 
                 <AddFriend user={currentUser} friend={user}/>
               </div>
@@ -22,7 +21,6 @@ var Users = React.createClass({
             })
           }
         </div>
-        <a href="/users/new" className='button is-primary'>Add Friend</a>
       </div>
     )
   }

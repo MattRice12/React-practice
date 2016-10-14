@@ -2,7 +2,7 @@ const AddFriend = React.createClass({
   makeFriend: function(e) {
 
     $.ajax({
-      url: '../friendships/',
+      url: '/friendships/',
       method: 'POST',
       data: JSON.stringify({
         user_id: this.props.user.id,
@@ -14,8 +14,8 @@ const AddFriend = React.createClass({
 
   render: function() {
     return (
-        <form className="new_friend" onSubmit={this.makeFriend}>
-          <input type="submit" value="Befriend" className="btn"/>
+        <form className="new_friend" onClick={this.makeFriend}>
+          <input type="submit" value="Befriend" className="button is-small is-primary"/>
         </form>
     )
   }
