@@ -1,6 +1,6 @@
 var UserGames = React.createClass({
   render: function(){
-    return(<ul>
+    return(<div>
       {this.props.games.map((game) => {
         {if (this.props.cat.id === game.category_id) {
           return(<div key={game.id} className="obj-with-del">
@@ -12,5 +12,5 @@ var UserGames = React.createClass({
             </h4>
         </div>)}}
       })}
-  </ul>)}
+  </div>)}
 })
