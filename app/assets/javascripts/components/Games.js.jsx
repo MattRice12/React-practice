@@ -5,7 +5,7 @@ var Games = React.createClass({
     let currentUser = this.props.currentUser;
 
     if (this.props.cat.games.length) {
-      gamesContent = this.props.cat.games.map(function(game) {
+      gamesContent = this.props.cat.games.map((game) => {
         return (
           <div key={game.id} className="obj-with-del">
             <ObjectList obj={game}

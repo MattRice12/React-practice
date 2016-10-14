@@ -3,7 +3,7 @@ var Users = React.createClass({
     let canDelete;
     let currentUser = this.props.current_user;
 
-    let eachUser = this.props.users.map(function(user) {
+    let eachUser = this.props.users.map((user) => {
       return(
         <div key={user.id} className="obj-with-del">
           <ObjectList obj={user}

@@ -1,9 +1,8 @@
 var Categories = React.createClass({
   render: function() {
-    let isAdmin;
     let currentUser = this.props.current_user;
 
-    let eachCategory = this.props.categories.map(function(cat) {
+    let eachCategory = this.props.categories.map((cat) => {
       return (<li key={cat.id} className="obj-with-del">
         <ObjectList obj={cat}
                     url={"categories"}

@@ -1,7 +1,14 @@
 var User = React.createClass({
   render: function(){
+    let currentUser = this.props.current_user;
+    let editUser;
+
+    if (currentUser.admin === true || currentUser.id == this.props.user.id) {
+      editUser = <a href={"/users/" + this.props.user.id + "/edit"} className="edit button is-primary">Edit User</a>
+    }
+
     return(<div className="content">
-      <a href={"/users/" + this.props.user.id + "/edit"} className="edit button is-primary">Edit User</a>
+      {editUser}
       <div className="photo">
         <img src={this.props.user.avatar_url_med} alt={this.props.user.username} title={this.props.user.username}/>
       </div>
