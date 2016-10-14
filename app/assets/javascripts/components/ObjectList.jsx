@@ -11,7 +11,7 @@ var ObjectList = React.createClass({
 
     if (targImg) {
       hasImg = <div className="thumb">
-                 <img src={this.props.obj.avatar_url_thumb} alt={this.props.obj.username} title={targName}/>
+                 <img src={targImg} alt={targName} title={targName}/>
                </div>
     };
 

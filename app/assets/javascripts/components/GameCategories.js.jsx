@@ -1,5 +1,6 @@
 var GameCategories = React.createClass({
   render: function() {
+    let currentUser = this.props.current_user;
     return(<div>
       <h1 className="title is-1 games">Games: </h1>
 
@@ -11,7 +12,8 @@ var GameCategories = React.createClass({
               <h2 className="category-name title is-2">
                 {cat.name}
               </h2>
-              <Games cat={cat}/>
+              <Games cat={cat}
+                     currentUser={currentUser}/>
             </div>
           )
         })}
