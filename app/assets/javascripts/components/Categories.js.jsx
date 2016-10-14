@@ -4,14 +4,10 @@ var Categories = React.createClass({
     let currentUser = this.props.current_user;
 
     let eachCategory = this.props.categories.map(function(cat) {
-      if (currentUser.admin === true) {
-        canDelete = <Delete obj={cat}
-                            url={"categories"}/>;
-      }
       return (<li key={cat.id} className="obj-with-del">
         <ObjectList obj={cat}
-                    url={"categories"}/>
-        {canDelete}
+                    url={"categories"}
+                    currentUser={currentUser}/>
       </li>
       )
     });

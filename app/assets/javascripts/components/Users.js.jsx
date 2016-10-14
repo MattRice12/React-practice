@@ -4,15 +4,11 @@ var Users = React.createClass({
     let currentUser = this.props.current_user;
 
     let eachUser = this.props.users.map(function(user) {
-      if (currentUser.admin === true) {
-        canDelete = <Delete obj={user}
-                url={"users"}/>;
-      }
       return(
         <div key={user.id} className="obj-with-del">
           <ObjectList obj={user}
-                      url={"users"}/>
-          {canDelete}
+                      url={"users"}
+                      currentUser={currentUser}/>
           <AddFriend user={currentUser} friend={user}/>
         </div>
       )
