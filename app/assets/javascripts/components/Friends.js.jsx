@@ -6,9 +6,9 @@ var Friends = React.createClass({
         <div>
           {this.props.friendships.map(function(f) {
             return (
-              <div key={f.id} className="obj-with-del">
+              <div key={f.friend.id} className="obj-with-del">
                 <div className="thumb">
-                  <img src={f.avatar_url_thumb} alt={f.username} title={f.username}/>
+                  <img src={f.friend.avatar_url_thumb} alt={f.friend.username} title={f.friend.username}/>
                 </div>
                 <h4 className="obj-name">
                   <a href={"/users/" + f.friend.id}>{f.friend.username}</a>

@@ -13,7 +13,6 @@ var User = React.createClass({
           <div key={cat.id} className="column">
             <h2 className="category-name title is-2">{cat.name}</h2>
             <UserGames cat={cat}
-                       user={this.props.user}
                        games={this.props.games}/>
           </div>
         )

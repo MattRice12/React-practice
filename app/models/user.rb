@@ -28,7 +28,7 @@ class User < ApplicationRecord
   end
 
   def as_json(_= nil)
-    super(include: :games, methods: [:avatar_url_thumb, :avatar_url_med])
+    super(include: nil, methods: [:avatar_url_thumb, :avatar_url_med])
   end
 
 end

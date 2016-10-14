@@ -15,6 +15,8 @@ var Games = React.createClass({
                     url={"games"}/>
           </div>);
       });
+    } else {
+      gamesContent = <p>{"no games exist in this category"}</p>
     }
     return(<div>{gamesContent}</div>)
   }
