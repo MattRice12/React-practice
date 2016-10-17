@@ -26,19 +26,19 @@ class UsersController < ApplicationController
   end
 
   def edit
-    user = User.find_or_create_by(username: params[:username])
+    user = User.find_by(username: params[:username])
     render locals: { user: user }
   end
 
   def update
-    user = User.find_or_create_by(username: params[:username])
-    return redirect_to user if user.update(user_params)
+    user = User.find_by(id: params[:username])
+    return redirect_to user_path(user.username) if user.update(user_params)
     flash[:alert] = user.errors
     render template: 'users/edit.html.erb', locals: { user: user }
   end
 
   def destroy
-    user = User.find_by(id: params[:id])
+    user = User.find_by(username: params[:username])
     if user.destroy && request.xhr?
       flash[:alert] = "User has been deleted"
     else

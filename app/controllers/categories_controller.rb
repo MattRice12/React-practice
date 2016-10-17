@@ -25,7 +25,7 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
-    category = Category.find_by(id: params[:id])
+    category = Category.find_by(name: params[:name])
     return redirect_to categories_path if category.destroy
     flash[:alert] = "Category could not be deleted."
     redirect_to categories_path

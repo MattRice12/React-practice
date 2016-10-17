@@ -6,10 +6,13 @@ var Delete = React.createClass({
 
     if (this.props.url === "users") {
       targName = this.props.obj.username;
-    };
+    } else if ((this.props.url === "game_collections") || (this.props.url === "friendships")) {
+      targName = this.props.obj.id;
+    }
+    ;
 
     $.ajax({
-      url: "/" + this.props.url + "/" + this.props.obj.id,
+      url: "/" + this.props.url + "/" + targName,
       method: "DELETE",
     });
   },
