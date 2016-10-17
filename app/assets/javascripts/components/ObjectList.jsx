@@ -26,7 +26,7 @@ var ObjectList = React.createClass({
       <div className="obj-thumb-and-name title is-5">
         {hasImg}
         <h4 className="obj-name">
-          <a href={"/" + this.props.url + "/" + this.props.obj.id}>{targName}</a>
+          <a href={"/" + this.props.url + "/" + targName}>{targName}</a>
         </h4>
         {canDelete}
       </div>
