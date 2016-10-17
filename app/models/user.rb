@@ -12,7 +12,7 @@ class User < ApplicationRecord
   has_many :inverse_friendships, class_name: "Friendship", foreign_key: "friend_id"
   has_many :inverse_friends, through: :inverse_friendships, source: :user
 
-  validates :username, presence: true, length: { maximum: 128}
+  validates :username, presence: true, length: { maximum: 128}, uniqueness: true
 
   has_attached_file :avatar, styles: { medium: "250x250>", thumb: "50x50>" }, default_url: "http://headphonespares.sennheiser.co.uk/gfx/default-missing-category-placeholder.png"
 

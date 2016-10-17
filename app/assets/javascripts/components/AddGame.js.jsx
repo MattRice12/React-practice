@@ -10,12 +10,7 @@ const AddGame = React.createClass({
         game_id: this.props.game.id
       }),
       contentType: "application/json",
-      success: (response) => {
-        console.log(response);
-      }
-    }).done(function (response) {
-      window.location.reload();
-  });
+    });
   },
 
   render: function() {

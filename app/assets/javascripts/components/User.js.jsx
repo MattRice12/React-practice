@@ -4,7 +4,7 @@ var User = React.createClass({
     let editUser;
 
     if (currentUser.admin === true || currentUser.id == this.props.user.id) {
-      editUser = <a href={"/users/" + this.props.user.id + "/edit"} className="edit button is-primary">Edit User</a>
+      editUser = <a href={"/users/" + this.props.user.username + "/edit"} className="edit button is-primary">Edit User</a>
     }
 
     return(<div className="content">

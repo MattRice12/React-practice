@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   resources :friendships
   devise_for :users
   devise_for :installs
-  resources :categories
-  resources :games
+  resources :categories, param: :name
+  resources :games, param: :name
   resources :users, param: :username, as: 'users'
 
   root 'users#index', as: 'root'

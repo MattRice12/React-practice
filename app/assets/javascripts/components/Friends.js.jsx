@@ -11,7 +11,7 @@ var Friends = React.createClass({
                   <img src={f.friend.avatar_url_thumb} alt={f.friend.username} title={f.friend.username}/>
                 </div>
                 <h4 className="obj-name">
-                  <a href={"/users/" + f.friend.id}>{f.friend.username}</a>
+                  <a href={"/users/" + f.friend.username}>{f.friend.username}</a>
                 </h4>
                 <Delete obj={f} url={"friendships"}/>
               </div>

@@ -9,7 +9,7 @@ var Category = React.createClass({
               <img src={game.gamepic_url_thumb} alt={game.name} title={game.name}/>
             </div>
               <h4 className="obj-name">
-                <a href={"/games/" + game.id}>{game.name}</a>
+                <a href={"/games/" + game.name}>{game.name}</a>
               </h4>
           </div>);
       });
@@ -22,7 +22,7 @@ var Category = React.createClass({
         <div className="content">
             <ul>{categoryContent}</ul>
         </div>
-        <a href={"/games/new?category_id=" + this.props.category.id} className='button is-primary'>Add Game</a>
+        <a href={"/games/new?category_id=" + this.props.category.name} className='button is-primary'>Add Game</a>
       </div>
     )
   }

@@ -3,12 +3,12 @@ class CategoriesController < ApplicationController
 
   def index
     categories = Category.all
-    category = Category.find_by(id: params[:id])
+    category = Category.find_by(name: params[:name])
     render locals: { categories: categories, category: category }
   end
 
   def show
-    category = Category.find_by(id: params[:id])
+    category = Category.find_by(name: params[:name])
     render locals: { category: category }
   end
 

@@ -8,7 +8,7 @@ var UserGames = React.createClass({
               <img src={game.gamepic_url_thumb} alt={game.name} title={game.name}/>
             </div>
             <h4 className="obj-name">
-              <a href={"/games/" + game.id}>{game.name}</a>
+              <a href={"/games/" + game.name}>{game.name}</a>
             </h4>
         </div>)}}
       })}

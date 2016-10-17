@@ -14,7 +14,7 @@ var Game = React.createClass({
         return(<div key={user.id} className="obj-with-del">
           <li>
             <h4 className="obj-name title is-4">
-              <a href={"/users/" + user.id}>{user.username}</a>
+              <a href={"/users/" + user.username}>{user.username}</a>
             </h4>
           </li>
         </div>);
@@ -48,7 +48,7 @@ var Game = React.createClass({
           <strong>Description: </strong>
             <ul className="title is-4">{this.props.game.description}</ul>
         </h3>
-        <a href={"/games/" + this.props.game.id + "/edit"} className='button is-primary'>Edit Game</a>
+        <a href={"/games/" + this.props.game.name + "/edit"} className='button is-primary'>Edit Game</a>
       </div>
     )
   }

@@ -1,10 +1,17 @@
 var Delete = React.createClass({
 
+
   handleDelete: function (e) {
+    let targName = this.props.obj.name;
+
+    if (this.props.url === "users") {
+      targName = this.props.obj.username;
+    };
+
     $.ajax({
       url: "/" + this.props.url + "/" + this.props.obj.id,
       method: "DELETE",
-      });
+    });
   },
 
   render: function() {

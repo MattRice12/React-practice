@@ -3,21 +3,22 @@ class GameCollectionsController < ApplicationController
 
   def create
     game_collection = GameCollection.new(game_collection_params)
+    game = Game.find_by(id: game_collection.game_id)
     if game_collection.save
       flash[:notice] = "Game added."
-      redirect_to root_url
+      redirect_to game_path(game.name)
     else
       flash[:error] = "Unable to add game."
-      redirect_to root_url
+      redirect_to game_path(game.name)
     end
   end
 
   def destroy
     game_collection = GameCollection.find(params[:id])
-    game = game_collection.game_id
+    game = Game.find_by(id: game_collection.game_id)
     game_collection.destroy
     flash[:notice] = "Game removed."
-    redirect_to game_path(game)
+    redirect_to game_path(game.name)
   end
 
   private
